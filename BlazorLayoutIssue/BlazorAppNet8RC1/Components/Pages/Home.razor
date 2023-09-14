@@ -1,0 +1,42 @@
+﻿@page "/"
+
+@attribute [RenderModeServer]
+
+<PageTitle>Home</PageTitle>
+
+<h1>Blazor .NET 8.0 RC 1 project</h1>
+
+<h3>header content</h3>
+
+<ContentComponent>
+    <h3>footer content 1</h3>
+</ContentComponent>
+
+<ContentComponent>
+    <h3>footer content 2</h3>
+</ContentComponent>
+
+<h3>main content</h3>
+
+<h3>HTML button</h3>
+<div>
+    <button @onclick="@OnHtmlButtonClick">Html button</button>
+</div>
+
+
+<div>
+    html data: @HtmlButtonData
+</div>
+
+
+
+@code {
+    public string HtmlButtonData { get; set; }
+
+    public void OnHtmlButtonClick()
+    {
+        HtmlButtonData = DateTime.Now.ToString();
+    }
+}
+
+
